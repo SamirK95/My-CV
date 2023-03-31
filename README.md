@@ -1,2 +1,2 @@
-# fuzzy-sniffle
+# myCV
 Coding
