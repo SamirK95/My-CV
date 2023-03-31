@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+
+     <!-- U ovome dijelu povezujemo HTML sa CSS-om, javaScriptom i definisemo 
+    naziv stranice "MojCV, takođe sam uvezao externu biblioteku pomoću koje sam napravio 
+    funkcionalan dugmić za preuzimanje CV-a u pdf formatu."  -->
+    <link rel="stylesheet" href="mojStil.css"> 
+
+    <script src="https://unpkg.com/translate.js/dist/translate.js"></script> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <script src="all.min.js"></script>
+    <script src="JavaScript/pdf.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js" 
+    integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <title>MojCV</title>
+</head>
+<body>
+    <!-- Ovo je glavni div id="pdfPodrucje" u kojem se nalazi čitav dokument da bi ga kasnije pretvorio u varijablu
+    u funkciji koja će služiti da dugmić bude funkcionalan za preuzimanje čitavog CV-a u pdf formatu. -->
+    <div class="container" id="pdfPodrucje"> 
+        <div class="lijevaStrana"> <!-- klasa za sve elemente sa lijeve strane stranice (osobni podaci)-->
+            <button id="btnLang" onclick="changeLanguage('english')"><i class="fa-solid fa-globe"></i></button>
+            <div class="tekstProfila"> <!-- klasa koja sadrzi polje za sliku, ime, fakultet, student klase-->
+            <div class="poljeZaSliku">
+            <img src="Slike/mojaSlika3.png" alt="Problem sa učitavanjem">
+            </div>
+            <div>
+                <h2 id="ime">Samir Katanić<br></h2>
+                <h3 id="fakultet">eMPIRICOM <br></h3>
+                <h3 id="student">Student</h3>
+            </div>
+        </div>
+        
+            <div class="contactInfo"> <!--Div klase contactInfo koja sadrzi naslove, podklase,neuredjenu listu, spanove i ikone za 
+            dio stranice gdje se nalaze podaci kao sto su broj telefona, zemlja i slicno.-->
+                <h3 class="naslov">Contact Info</h3>
+                <ul>
+                    
+                    <li>
+                        <span class="ikona"><i class="fa fa-mobile" aria-hidden="true"></i></span>
+                        <span class="tekst">062-223/365</span>
+
+                    </li>
+                    <li>
+                        <span class="ikona"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                        <span class="tekst">katanicsamir@gmail.com</span>
+
+                    </li>
+                    <li>
+                        <span class="ikona"><i class="fa-brands fa-linkedin"></i></span>
+                        <span class="tekst"> <a href="https://www.linkedin.com/in/samir-katani%C4%87-8740b3256" id="linkedinID">Linkedln</a> </span>
+
+                    </li>
+                    <li>
+                        <span class="ikona"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span class="tekst">Bosna i Hercegovina - Tuzla</span>
+
+                    </li>
+                </ul>
+        </div>
+
+            <div class="contactInfo-edu"><!--glavni div za dio stranice gdje se nalaze podaci o edukaciji
+            ovaj div sadrzi naslov, podnaslove, neuredjenu listu stavki..-->
+                <h3 class="naslov">Education</h3>
+                <ul>
+                    <li>
+                        <h5>2020 - Present </h5>
+                        <h4>Bachelor Engineering Informatics</h4>
+                        <h4>College of Computer Science and Informatics "eMPIRICOM" Tuzla</h4>
+                    </li>
+                    <ul>
+                        <ul>
+                            <li>
+                                <h5>2019 - 2020</h5>
+                                <h4>Master Chef V Degree</h4>
+                                <h4>PU "Center for Adult Education and Training of the Tehnical Profession" Živinice </h4>
+                            </li>
+                        </ul>
+                <ul>
+                    <li>
+                        <h5>2010 - 2013</h5>
+                        <h4>Cook</h4>
+                        <h4>Tuzla Tourism and Catering High School</h4>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contactInfo-lang"><!--Ovo je glavni div koji sadrzi podatke na stranici za Language(jezik)
+            kao sto je naslov, neuredjena lista stavki, span elementi, podivovi i slično.
+            U ovom divu se nalaze neuredjene liste stavki u kojem se nalaze span elementi sa nazivom jezika
+            i poddivovima kojima sam kroz style definisao procenat poznavanja odredjednog jezika kao npr:
+            "English(engleski jezik)-70%(cca procenat poznavanja tog jezika)" isto sam napravio za ostale jezike
+            "Bosnian i German".-->
+                <h3 class="naslov">Languages</h3>
+                <ul>
+                    <li>
+                        <span class="text">Bosnian</span>
+                        <span class="percent">
+                            <div style="width: 100%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">English</span>
+                        <span class="percent">
+                            <div style="width: 70%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">German</span>
+                        <span class="percent">
+                            <div style="width: 30%;"></div>
+                        </span>
+                    </li>
+                </ul>
+                <!--ovdje sam definisao neovisna dva dugmica i dvije ikonice koje se nalaze na lijevoj strani stranice
+                gdje su osobni podaci, odmah ispod Language imamo Print ikonu i Print dugmic, kao i PDF ikonu, i PDF dugmic-->
+                <i class="fa fa-print" aria-hidden="true" id="printIcon"></i><!--Print Ikona-->
+                <button id="printCV">Print CV</button><!--Print dugmic-->
+                <i class="fa fa-download" aria-hidden="true" id="PDF"></i><!--Download Ikona-->
+                <button id="btnPDF">Download PDF</button><!--Download dugmic-->
+            
+            </div>
+        </div>   
+        
+        
+        <div class="container-2">
+            <div class="desnaStrana"><!--Ovo je glavni div glavnog sadrzaja desne strane stranice koji sadrzi poddivove sa klasama,
+            naslove, paragrafe i slicno, procent-barove, neuredjenu listu stavki itd. -->
+
+                <div class="about" lang="english"> <!-- Ovaj div klase about sadrzi naslov About me kao i paragraf-->
+                    <h2 class="naslov2">About me</h2>
+                    <p id="translate">Moje ime je Samir Katanić, rođen sam 05.12.1995 godine u Tuzli, gdje i živim.
+                        Ja sam entuzijastična, komunikativna, jako motivirana, odgovorna i pouzdana osoba.
+                        U stanju sam da radim kako u timskom okruženju tako i samoinicijativno.
+                        Mogu reći da se jako brzo prilagođavam i da problemima pristupam jako ozbiljno te da ih 
+                        doživljavam kao izazove. Spreman sam da vrijedno radim, izučavam nove tehnologije i 
+                        radim na ličnom usavršavanju.
+
+                    </p>
+                </div>
+
+                <div class="about" lang="english"> <!--Ovaj div takodje klase about sadrzi naslov Experience kao i paragraf-->
+                    <h2 class="naslov2">Experience</h2>
+                    <p id="translate2">Trenutno se nalazim na trećoj godini studija, na fakultetu računarstva i informatike
+                        "eMPIRICOM", smjer inženjerska informatika. Očekivani završetak studija je najkasnije
+                        u septembru 2023 godine. Tokom studiranja radio sam na raznim projektima kako solo,
+                        tako i u timu, gdje sam stekao znanja iz raznih područja informatike, kao što su web tehnologije, 
+                        baze podataka, objektno orijentisano programiranje, proceduralno programiranje,
+                        računarske mreže. Trenutno nemam profesionalnog radnog iskustva u struci, ali 
+                        imam jaku želju i motivaciju za profesionalni napredak.
+                        <br><br>
+                        
+                    	</p>
+                </div>
+
+                <div class="about skills"> <!--Ovaj div klase skills sadrzi naslov "Skills"
+                u kojem sam definisao poddivove klase box u kojem se nalazi podnaslov HTML takodje
+                i pod div klase percent u kojem sam definisao preko style procenat poznavnja odredjenog
+                programskog jezika poput C++ i druge..-->
+                    <h2 class="naslov2">Skills</h2>
+
+                <!--<div class="box">
+                    <h4>HTML</h4>
+                    <div class="percent">
+                        <div style="width: 80%;"></div>
+                    </div>
+                    
+                </div>
+                <div class="box">
+                    <h4>CSS</h4>
+                    <div class="percent">
+                        <div style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>C</h4>
+                    <div class="percent">
+                        <div style="width: 50%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>C++</h4>
+                    <div class="percent">
+                        <div style="width: 65%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Java</h4>
+                    <div class="percent">
+                        <div style="width: 58%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>JavaScript</h4>
+                    <div class="percent">
+                        <div style="width: 40%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>SQL</h4>
+                    <div class="percent">
+                        <div style="width: 65%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>MySQL</h4>
+                    <div class="percent">
+                        <div style="width: 39%;"></div>
+                    </div>
+                </div>-->
+                <div class="about" lang="english">
+                    <p id="translate3">
+                        Tehnologije koje smo koristili i koje sam savladao tokom studiranja su sljedeće: <br> 
+                        Programski jezici koje poznajem su  C, C++, C#, Java, takođe znam osnove JavaScripta. <br>
+                        Platforma za razvoj web aplikacija ASP.NET u kombinaciji sa c# programskim jezikom i MSSQL bazom podataka, 
+                        na šta sam se malo više fokusirao. <br> Jezici za strukturu i stiliziranje web sajtova HTML I CSS. <br>
+                        Baze podataka MSSQL i MySQL. <br>
+                        Alat za dizajn i modeliranje softvera Visual Paradigm. <br> 
+                        Alat za simulaciju mrežnih sistema Cisco Paket Tracer. <br>
+                        Microsoft office paket kao što je word, excel, powerpoint, microsoft visio, microsoft access.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="about interest"><!--Ovaj div klase interest sadrzava naslov Interest,
+                     neuredjenu listu stavki sa ikonicama ilustracije i sadrzajem kao sto je 
+                    "Hobi: Kuhanje, Igrice i ostali sadrzaj." -->
+                <h2 class="naslov2">Interest</h2>
+                <ul id="translate4" >
+                    <li translate="translate"><i class="fa fa-cutlery" aria-hidden="true" ></i>Kuhanje</li>
+                    <li translate="translate"><i class="fa fa-microphone" aria-hidden="true" ></i>Pjevanje</li>
+                    <li translate="translate"><i class="fa fa-gamepad" aria-hidden="true" ></i>Igrice</li>
+                    <li translate="translate"><i class="fa fa-film" aria-hidden="true" ></i>Filmovi</li>
+                    <li translate="translate"><i class="fa fa-music" aria-hidden="true" ></i>Muzika</li>
+                    <li translate="translate"><i class="fa fa-plane" aria-hidden="true" ></i>Putovanje</li>
+                    
+                </ul>  
+            </div>   
+        </div>
+        <!--U ovoj skripti sam definisao varijablu btn u kojoj sam napisao komandu
+        gdje pronalazim dugmic to jeste dugmic za printanje dokumenta(CV-a)
+        nakon toga sam naveo tu varijablu i komandu da kada se klikne na dugmic
+        printa dokument pomocu ugradjene js funkcije onclick.-->
+    <script>
+        var btn = document.querySelector('#printCV');
+        btn.onclick= () =>{
+            window.print();
+        }
+     </script>
+
+     <script>
+        const aboutme = document.querySelector('#translate');
+        const experience = document.querySelector('#translate2');
+        const skills = document.querySelector('#translate3');
+        const interest = document.querySelectorAll('[translate]');
+
+        
+
+        var data = {
+            "english": {
+            "translate": "My name is Samir Katanić, I was born on 5 December, 1995 in Tuzla, where I live. I am an enthusiastic, communicative, highly motivated, responsible and reliable person. I am able to work both in a team environment and on my own initiative. I adapt very quickly and I approach problems very seriously and perceive them as challenges. I am ready to work hard, study new technologies and work on personal improvement.",
+            "translate2": "I am currently in my third year of study at the Faculty of Computing and Informatics 'eMPIRICOM', majoring in engineering informatics. The expected completion of studies is in September 2023 at the latest. During my studies, I worked on various projects both solo and in a team, where I gained knowledge in various areas of IT, such as web technologies, databases, object-oriented programming, procedural programming, computer networks. I currently have no professional work experience in the field, but I have a strong desire and motivation for professional advancement.",
+            "translate3": "The technologies we used and which I mastered during my studies are as follows:\nThe programming languages I know are C, C++, C#, Java, and I also know the basics of JavaScript.\nPlatform for web application development ASP.NET combined with c# programming language and MSSQL database, which I focused on more.\nLanguages for the structure and styling of websites HTML and CSS.\nDatabases MSSQL and MySQL.\nVisual Paradigm software design and modeling tool.\nTool for simulating network systems Cisco Packet Tracer.\nMicrosoft Office package such as Word, Excel, PowerPoint, Microsoft Visio, and Microsoft Access.",
+            "translate4": {
+            "Kuhanje": "Cooking",
+            "Pjevanje": "Singing",
+            "Igrice": "Gaming",
+            "Filmovi": "Movies",
+            "Muzika": "Music",
+            "Putovanje": "Traveling"
+      }
+        }
+};
+
+    function changeLanguage(language) {
+        aboutme.innerText = data[language]['translate'];
+        experience.innerText = data[language]['translate2'];
+        skills.innerText = data[language]['translate3'];
+
+        Array.from(interest).forEach(function(item) {
+        const interestName = item.textContent.trim();
+        const translatedInterest = data[language]['translate4'][interestName];
+        item.innerHTML = `<i class="${item.firstElementChild.classList.value}"></i>${translatedInterest}`;
+
+
+    });
+  }
+     </script>
+
+
+</body>
+</html>

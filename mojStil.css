@@ -1,0 +1,459 @@
+/*Podesavanje familije fonta, margina, padinga i velicine box-a za cijeli dokument*/
+*
+{
+    margin: 0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+
+}
+/*Podesavanje boje pozadine u svijetlo plavu cijele stranice, 
+pomocu display flex i justify-content sam centrirao
+svoj cijeli dokument(CV) na sredinu stranice*/
+body{
+    background: lightblue;
+    display: flex;
+    justify-content: center;
+}
+/*U ovom kontejneru se nalaze svi elementi cijelog dokumenta i u sljedećem kodu smo stilizirali
+njegovu širinu, poziciju, pozadinu, margine, i ostalo tako da bi sadržaj koji će se nalaziti 
+na stranici bio podijeljen na dva dijela(lijeva-osobne informacije, desna-glavne informacije cv-a)
+sto smo postigli komandom grid-template-columns 1fr 2fr sto znaci da lijeva strana dokumenta
+gdje su osobni podaci zauzima 25% slobodnog prostora a desna strana gdje je glavni sadrzaj
+zauzima preostalih 75% slobodnog prostora  kontejnera u kome su smjesteni svi elementi*/
+.container{ 
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1000px;
+    background: #fff;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 35px 55px rgba(0,0,0,0,1);
+}
+/*Ovdje stiliziramo klasu lijeva strana u kojoj se nalaze svi elementi 
+osobnih podataka na lijevoj strani i stavicemo poziciju relativnu, 
+pozadinu tamno plavu kao i ispunjavanje od 40px*/
+.container .lijevaStrana {
+    position: relative;
+    background: #003147;
+    padding: 40px;
+}
+/*Klasa koja sadrzi elemente sa gornje lijeve strane Slika, Ime, Fakultet i Student
+i ovdje cemo stilizirati poziciju ispunjavanje i centriranje elemenata unutar div-a
+i pomocu komande border-bottom sam stilizirao malu liniju koja će odvojiti 
+sliku, ime, fakultet i student, od preostalih elemenata kao sto je contact info
+edukacija i slicno.*/
+.tekstProfila{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+/*Ovo je klasa za sliku u kojoj smo stilizirali poziciju sirinu
+visinu kao i border-radius i overflow pomocu kojih sam dobio 
+okrugli oblik za sliku.  */
+.tekstProfila .poljeZaSliku{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+/*Ovdje smo stilizirali samu sliku iz klase polje za sliku to jeste
+ sirinu i visinu prikaza slike i takodje veoma korisna funkcija 
+object-fit - gdje je vrijednost cover koja je promijenila velicinu slike
+tako da bi ispunila okvir koji sam prethodno definisao bez da gubim na kvaliteti slike.*/
+.tekstProfila .poljeZaSliku img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+/*Ovdje smo stilizirali sami prelazak misem preko slike to jeste 
+dodali smo graficki efekat bar tako izgleda koristio sam funkciju
+transform: scale(1.05) sto bi znacilo ukoliko se predje misem
+preko slike da ce slika biti uvecana za ovu vrijednost. I tako 
+cemo dobiti nesto kao "graficki efekat".*/
+.poljeZaSliku img:hover{
+    transform: scale(1.05);
+}
+/*U klasi tekstProfila sam napravio ID #ime, #fakultet, #student
+gdje sam stilizirao boju fonta velicinu fonta, gornju marginu(udaljenost od slike),
+centrirao tekst, "debljinu" fonta sam stavio na 600 kao naglasak i line height
+od 30px gdje sam definisao kolicinu prostora iznad i ispod elementa */
+.tekstProfila #ime{
+    color: #fff;
+    font-size: 24px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 30px;
+}
+/*Objasnjenje iznad */
+.tekstProfila #fakultet{
+    color:orangered;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 30px;
+}
+/*Objasnjenje iznad*/
+.tekstProfila #student{
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 300;
+    line-height: 30px;
+}
+/*U ovoj klasi sam stilizrao gornji razmak izmedju elemenata
+u vrijednosti od 20px na lijevoj strani gdje su osobni podaci.*/
+.contactInfo{
+    padding-top: 20px;
+}
+/*U ovoj klasi sam stilizirao boju naslova na lijevoj strani 
+Contact info, Education, Languages kao i font-weight(debljinu)
+vrijednost 600 naglaseno, razmak izmedju slova od 1px i 
+donju marginu koja odvaja elemente od 20px.*/
+.naslov{
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+/*Za neuredjenu listu smo postavili poziciju relativnu*/
+.contactInfo ul{
+    position: relative;
+}
+/*Za stavke neuredjene liste gdje se nalaze broj telefona, mejl
+stranica i zemlja/grad stanovanja u contact info klasi sam stilizirao
+poziciju relative, male krugice sam uklonio list-style none, gornju marginu
+10px, desnu 0, cursor: pointer - kada se predje misem preko ikonica da se 
+prikaze pointer na elemenat to jeste ikonicu*/
+.contactInfo ul li{
+    position: relative;
+    list-style: none;
+    margin: 10px, 0;
+    cursor: pointer;
+}
+/*Stilizirali smo klasu .ikona to jeste njihovu velicinu, boju, 
+sirnu, kao i display: inline-block sto nam sluzi da se postuju margine
+to jeste da tekst nakon ikonice bude u sinhroniziranom razmaku*/
+.contactInfo ul li .ikona{
+    display:inline-block;
+    width: 20px;
+    font-size: 18px;
+    color:orangered;
+}
+/*Ovdje smo stilizirali za sve span elemente neuredjene liste stavki u klasi
+.contact info tacnije: broj mobitela, drzava-grad, mejl, stranica, da 
+boja fonta bude bijela i tezinu fonta na 300 da bude tanji od recimo naslova
+Contact info i slicno to koristim da bi naglasio vaznost elemenata.*/
+.contactInfo ul li span{
+    color: #fff;
+    font-weight: 300;
+}
+/*U ovome dijelu za klasu .contactInfo-edu, gdje se sa lijeve strane
+nalazi dio Education za stavke neuredjene liste stavio sam donju marginu
+15px da odvojim elemente koji se nalaze ispod, kao i 
+list-style: none da bi uklonio male kruzice.*/
+.contactInfo-edu li{
+    margin-bottom: 15px;
+    list-style: none;
+}
+/*U ovome dijelu za klasu .contacInfo-edu gdje su informacije za moje 
+edukovanje sam za sve elemente h5 to jeste godinu skolovanja naveo
+da boja bude orange, da naglasak na godinu bude 500(tanji font) te
+margine gornja 5px i desna 0. */
+.contactInfo-edu h5{
+    color: orangered;
+    font-weight: 500;
+    margin: 5px, 0;
+}
+/*U ovome dijelu sam stilizirao sve h4 elemente u klasi
+.contactInfo-edu "Education" tacnije tekst koji se nalazi
+ispod godine skolovanja da bude bijeli, tezina-(debljina)-naglasak
+da bude 300 jer je kao vazniji dio od godine kao i marginu
+gornju 5px, i desnu 0.*/
+.contactInfo-edu h4{
+    color: #fff;
+    font-weight: 300;
+    margin: 5px 0;
+}
+/*U ovom dijelu za klasu .naslov unutar klase .contactInfo-edu 
+to jeste ovaj naslov Education podesio sam gornju marginu 20px
+da se odvoji od gornjeg elementa "Contact info"*/
+.contactInfo-edu .naslov{
+    margin-top: 20px;
+}
+/*U ovome dijelu za klasu .contactInfo-lang sam stilizirao neuredjenu listu stavki
+elemente za "Language" to jeste jezici koje sam naveo "Bosnian, English, German", 
+da boja bude bijela, list-style:none / da iskljucim kruzice navoda, kao i margine
+gornja 10px i desna 0.*/
+.contactInfo-lang ul li{
+    color: #fff;
+    list-style: none;
+    margin: 10px 0;
+}
+/*U ovom dijelu stiliziramo span-ove koji su iz zajednicke klase .percent
+preko kojih sam htio prikazati postotak savladavanja odredjenog
+jezika sa lijeve strane na stranici u djelu "Languages"
+pa tako sam postavio relativnu poziciju elemenata sirinu na 100%
+i visinu od 6px, stavio sam boju pozadine koja bi prikazivala taj postotak bar 
+display:block za prikaz postotak bar-a i marginu gornju od 5px da bi odvojio
+progress bar od jezika(Bosnian, English, German).
+  */
+.contactInfo-lang .percent{
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: #081921;
+    display: block;
+    margin-top: 5px;
+}
+/*Unutar gornje klase to jeste span elemenata ubacio sam  tri div-a
+za navedena tri jezika style sam im podesio u html dokumentu to jeste npr:
+style="width: 70%"( cca procenat znanja jezika) kao sto je slucaj za element English tako da sam 
+u ovome dijelu za sve divove odredio visinu na 100% da popuni postotak-bar
+a boja odredjenog unesenog procenta da bude organgered
+*/
+.contactInfo-lang .percent div{
+    height: 100%;
+    background: orangered;
+}
+/*U ovome dijelu dolazimo do elemenata koji se nalaze na desnoj strani web stranice
+unutar div-a koji je klase .container-2 i sadrzi sve elemente desne strane, ubacujem jos jedan div klase 
+.desnaStrana u kojem sam stilizirao pozadinu da bude bijela na citavoj desnoj strani
+kao i padding od 40px koji ce odvojiti sadrzaj za 40px od ivica.
+*/
+.container-2 .desnaStrana {
+    background: #fff;
+    padding: 40px;
+    
+}
+/*U ovome dijelu u klasi .about  sam postavio donju marginu na 50px
+tako da se paragrafi od naslova(Experience, Skills, Interest) odvajaju za 50px.  */
+.about{
+    margin-bottom: 50px;  
+}
+/*U ovome dijelu sam za sve naslove u klasi .about naslove stavio 
+u podklasu koja se zove .naslov2 tako da sam za sve naslove
+desne strane web stranice gdje se nalaze naslovi(About me,Experience, Skills, Interest) 
+stavio plavu boju, odvajanje slova jedno od drugog za 1pixel a i donju marginu 
+od 10px koja odvaja naslove od pocetka paragrafa.*/
+.naslov2{
+    color: #003147;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+/*U ovome dijelu sam sve paragrafe oznacio da im boja bude
+otprilike tamno siva. */
+p{
+    color: #333;
+}
+/*U ovome dijelu dolazimo do elementa Skills koji je prikazan na stranici
+box je klasa za pod divove glavnog diva skills i u tim poddivovima se nalaze 
+naslovi kao što su HTML, CSS, C++ i ostalo.. a unutar diva klase box se nalazi jos
+jedan div klase percent u kojem sam opet definisao npr style="width: 80%"
+kao sto je slucaj na prikazu stranice sa HTML-om znaci ovo width oznacava
+u procentima poznavanje recimo HTML-a. Za ovu klasu .box sam odredio širinu na 100%
+display: grid koji prikazuje procenat-bar u liniji sa naslovima tipa HTML, CSS i slicno.
+zatim grid-template-columns: 150px 1fr sam stilizirao tako da procent bar bude odvojen
+od naslova npr HTML za vrijednost 150px dok 1fr oznacava jednu kolonu u liniji, 
+takodje sam centrirao sadrzaj ove klase. */
+.skills .box{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    justify-content: center;
+    align-items: center;
+}
+/*U ovome dijelu za sve naslove h4 kao sto su(HTML, CSS..) unutar klase box
+sam postavio boju na blijedo sivu, tezinu fonta na 500 tako da ne bude boldirano
+i padding na 5 piksela koji odvaja sve elemente (HTML, CSS...)za 5 pixela */
+.skills .box h4{
+    color: #848c99;
+    font-weight: 500;
+    padding: 5px;
+}
+/*U ovome dijelu stiliziram procent-bar tako sto sam postavio poziciju relative,
+sirinu procent bar-a na 100% preostalog prostora stranice i tako da kada style u divu u 
+html dokumentu postavim recimo na 60% to bi reklo da recimo npr ja poznajem
+css 60% od 100% procent bar-a stavio sam visinu od 10 piksela procent-bar-a
+i boju pozadine neispunjenog prostora nesto kao siva ili prljavo bijela. 
+Procent-bar je radjen na slicnom principu kao i na lijevoj strani stranice
+u dijelu Language osim sto sam tamo postavljao drugaciji raspored podnaslova i 
+procent-bara. */
+.skills .box .percent{
+    position:relative;
+    width: 100%;
+    height: 10px;
+    background:rgb(204, 204, 163);
+}
+/*U ovome dijelu stiliziram div koji ce prikazati postotak poznavanja
+recimo HTML-a, CSS-a..i slicno. tako da sam ovdje namjestio poklapanje
+sa procent bar-om to jeste height na 100% tako da ce zauzeti 100% 
+visine procent bar-a odnosno ispuniti ga kada upisem odredjeni procenat
+i takodje pozadinu sam postavio na orangered. */
+.skills .box .percent div{
+    height: 100%;
+    background:orangered;
+}
+/*U ovome dijelu dolazimo do klase .interest na stranici je to Interest.
+imam ul to jeste neuredjenu listu koja ce sadrzavati li elemente kao sto su
+Kuhanje, Pjevanje.. i slicno. Ovdje postavljam display:grid i grid-template-columns
+:repeat(6, 1fr) sto znaci da sam stavio 6 elemenata ul liste u 1fr(1 red)*/
+.interest ul{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+/*U ovome dijelu stiliziramo elemente neuredjene liste to jeste stavke
+kao sto su Kuhanje, pjevanje itd. tako da sam uklonio krugice sa 
+list-style: none, postavio boju elemenata na tamno sivu otprilike,
+i takodje gornju marginu na 5px i desnu na 0 */
+.interest ul li{
+    list-style: none;
+    color: #333;
+    margin: 5px 0;
+}
+/*U ovome dijelu stiliziram ikonice unutar li elemenata
+koje stoje pored sadrzaja u dijelu stranice Hobi kao sto je
+Kuhanje, pjevanje itd. Postavio sam boju ikonica na orangered
+velicinu fonta na 18px i sirinu ikonica na 20px*/
+.interest ul li .fa{
+    color: orangered;
+    font-size: 18px;
+    width: 20px;
+}
+/*U ovome dijelu stiliziram animaciju dugmica koji se nalazi u lijevom dijelu stranice
+koji je ilustracija za printanje dokumenta(CV-a) postavio sam gornju marginu na 15 px
+za odvajanje od gornjeg elementa, display:inline-block da elementi budu u
+istoj liniji, sirina ikonice na 20 piksela, velicina na 25px i boja orangered.  */
+#printIcon{
+    margin-top: 15px;
+    display: inline-block;
+    width: 20px;
+    font-size: 25px;
+    color:orangered;
+}
+/*U ovome dijelu stiliziram funkcionalan dugmic koji sluzi za printanje CV-a
+koji stoji pored ikonice za printanje. Postavio sam display:inline-block da bude
+u liniji sa drugim elemntima boju fonta sam postavio bijelu, font-family Arial,
+centrirao sam text stavio absolute poziciju, gornju marginu na 17 px
+da bi poravnao dugmice da izgledaju na istoj razini zbog razlicitih dimenzija
+okvir sam stavio od 1px solid i boja orangered, velicinu dugmica na 16px, 
+lijevu marginu na 8px koja odvaja dugme od ikone za 8px i cursor:pointer
+to jeste pokazivac kada se predje misem preko dugmica. */
+#printCV{
+    display:inline-block;
+    color: #efefef;
+    font-family: 'Arial';
+    text-align: center;
+    position:absolute;
+    margin-top:17px;
+    border: 1px solid orangered;
+    border-radius: 5px;
+    background: orangered;
+    font-size: 16px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+/*U ovome dijelu sam stilizirao hover za dugmic za printanje CV-a
+to jeste kada se predje preko dugmica dugmic mjenja boju fonta na orangered 
+kao i okvir dok ce pozadina dugmica biti crna. */
+#printCV:hover{
+    color: orangered;
+    background-color:black;
+    border-color: orangered;
+}
+/*U ovome dijelu stiliziram ikonicu ilustraciju za preuzimanje CV-a
+u PDF formatu postavio sam lijevu marginu na 100px koja odvaja 
+ikonicu za 100px u desno od pocetka kontejnera, gornju marginu
+za 15px koja odvaja ikonicu od gornjeg elementa, sirinu ikonice 20px, 
+velicinu ikonice na 23px i boju ikonice na orangered.*/
+#PDF{
+    margin-left: 100px;
+    margin-top: 15px;
+    width: 20px;
+    font-size: 23px;
+    color:orangered;
+
+}
+/*U ovome dijelu stiliziram funkcionalan dugmic za samo
+preuzimanje CV-a u PDF formatu. Postavio sam boju fonta da bude
+bijela, font - family - Arial, centralno poravnanje teksta, poziciju
+dugmica absolute da bude u liniji sa drugim elementima, gornju marginu
+na 17 px sto odvaja dugmic od gornjeg elementa, okvir dugmica 1px solid
+boje orangered zakrivljenost okvira na 5px, pozadina dugmica(boja) orangered,
+velicina dugmica 16px, lijeva margina 8px sto odvaja ovaj dugmic od ikonice
+za 8px i cursor:pointer sto ce omoguciti pokazivac kada predjemo misem preko
+dugmica. */
+#btnPDF{
+    color: #efefef;
+    font-family: 'Arial';
+    text-align: center;
+    position:absolute;
+    margin-top:17px;
+    border: 1px solid orangered;
+    border-radius: 5px;
+    background: orangered;
+    font-size: 16px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+/*U ovome dijelu stiliziram hover to jeste kada predjemo misem
+preko dugmica za preuzimanje PDF-a da boja fonta bude orangered,
+pozadina da bude crne boje, i okvir dugmica da bude orangered*/
+#btnPDF:hover{
+    color: orangered;
+    background-color:black;
+    border-color: orangered;
+}
+#linkedinID{
+    color:white;
+    text-decoration: none;
+    
+}
+#btnLang{
+    color:orangered;
+    background:none;
+    border:none;
+    
+}
+#btnLang:hover::after{
+    cursor:pointer;
+    content:" Change to English";
+}
+/*U ovome dijelu stiliziram kako ce izgledati sadrzaj
+stranice recimo sa razlicitih uredjaja ili kada smanjimo 
+velicinu stranice(kada nije maximizirana). Prva stavka je klasa container
+u kojoj se nalazi citav sadrzaj stranice i postavio marginu na 10px sa svih strana
+sto znaci da ukoliko smanjimo velicinu stranice sa strana ce prikazati samo 10px
+pozadine body dokumenta ostalo ce biti fokusirano na sadrzaj, zatim sam definisao
+grid-template-columns:repeat(1, 1fr) gdje ce jedan element zauzimat 100% stranice
+jer mi ljepse izgleda nego da sam stavio da 2, 1fr gdje bi izgledalo kao i 
+normalna web stranica ali skuceno i nabacano. Zatim stiliziram dio stranice Interest
+to jeste klasu .interest tako da ce prikazivati hobije kao sto su "Kuhanje, pjevanje itd"
+1 element u jednom redu jedno ispod drugog tokom smanjivanja stranice. Isto sam uradio
+i za podklasu .box klase .skills gdje ce se elementi prikazivati u jednom redu po jedan element
+jedan ispod drugog kao na primjer HTML pa procent bar- ispod njega i tako dalje.  */
+@media (max-width: 1000px ){
+    .container{
+        margin: 10px;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .interest ul{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .skills .box{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+
+
+
+
+
+
