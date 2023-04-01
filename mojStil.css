@@ -315,7 +315,7 @@ i takodje gornju marginu na 5px i desnu na 0 */
 .interest ul li{
     list-style: none;
     color: #333;
-    margin: 5px 0;
+    margin: 5px 0px; /* 5 0 je bila*/
 }
 /*U ovome dijelu stiliziram ikonice unutar li elemenata
 koje stoje pored sadrzaja u dijelu stranice Hobi kao sto je
@@ -424,6 +424,10 @@ pozadina da bude crne boje, i okvir dugmica da bude orangered*/
 #btnLang:hover::after{
     cursor:pointer;
     content:" Change to English";
+}
+#gitHubID{
+    color:white;
+    text-decoration: none;
 }
 /*U ovome dijelu stiliziram kako ce izgledati sadrzaj
 stranice recimo sa razlicitih uredjaja ili kada smanjimo 
