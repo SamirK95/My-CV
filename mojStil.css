@@ -425,6 +425,13 @@ pozadina da bude crne boje, i okvir dugmica da bude orangered*/
     cursor:pointer;
     content:" Change to English";
 }
+#hubID{
+    color:white;
+    text-decoration: none;
+}
+#hubID:hover{
+    cursor: pointer;
+}
 /*U ovome dijelu stiliziram kako ce izgledati sadrzaj
 stranice recimo sa razlicitih uredjaja ili kada smanjimo 
 velicinu stranice(kada nije maximizirana). Prva stavka je klasa container
