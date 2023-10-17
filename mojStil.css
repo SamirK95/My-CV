@@ -4,6 +4,7 @@
     margin: 0;
     padding:0;
     font-family: 'Poppins', sans-serif;
+    
 
 }
 /*Podesavanje boje pozadine u svijetlo plavu cijele stranice, 
@@ -235,7 +236,8 @@ kao i padding od 40px koji ce odvojiti sadrzaj za 40px od ivica.
 /*U ovome dijelu u klasi .about  sam postavio donju marginu na 50px
 tako da se paragrafi od naslova(Experience, Skills, Interest) odvajaju za 50px.  */
 .about{
-    margin-bottom: 50px;  
+    margin-bottom: 20px;
+    text-align: justify;
 }
 /*U ovome dijelu sam za sve naslove u klasi .about naslove stavio 
 u podklasu koja se zove .naslov2 tako da sam za sve naslove
@@ -436,6 +438,14 @@ pozadina da bude crne boje, i okvir dugmica da bude orangered*/
     margin-left:30px;
     margin-bottom: 10px;
     color: #333;
+}
+a:hover{
+    color: rgb(255, 128, 0);
+    text-decoration: underline;
+}
+a{
+    color:orangered;
+    text-decoration: none;
 }
 /*U ovome dijelu stiliziram kako ce izgledati sadrzaj
 stranice recimo sa razlicitih uredjaja ili kada smanjimo 

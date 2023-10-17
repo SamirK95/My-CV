@@ -30,7 +30,6 @@
     u funkciji koja će služiti da dugmić bude funkcionalan za preuzimanje čitavog CV-a u pdf formatu. -->
     <div class="container" id="pdfPodrucje"> 
         <div class="lijevaStrana"> <!-- klasa za sve elemente sa lijeve strane stranice (osobni podaci)-->
-            <button id="btnLang" onclick="changeLanguage('english')"><i class="fa-solid fa-globe"></i></button>
             <div class="tekstProfila"> <!-- klasa koja sadrzi polje za sliku, ime, fakultet, student klase-->
             <div class="poljeZaSliku">
                 
@@ -38,7 +37,7 @@
             </div>
             <div>
                 <h2 id="ime">Samir Katanić<br></h2>
-                <h3 id="fakultet">Graduate Informatics Engineer <br></h3>
+                <h3 id="fakultet">Bachelor-inženjer računarstva i informatike<br></h3>
             </div>
         </div>
         
@@ -86,25 +85,46 @@
                 <ul>
                     <li>
                         <h5>2020 - 2023 </h5>
-                        <h4>Graduate Informatics Engineer</h4>
-                        <h4>College of Computer Science and Informatics "eMPIRICOM" Tuzla</h4>
+                        <h4>Bachelor-inženjer računarstva i informatike</h4>
+                        <h4>Visoka škola računarstva i informatike "eMPIRICOM" Tuzla</h4>
                     </li>
                     <ul>
                         <ul>
                             <li>
                                 <h5>2019 - 2020</h5>
-                                <h4>Master Chef V Degree</h4>
-                                <h4>PU "Center for Adult Education and Training of the Tehnical Profession" Živinice </h4>
+                                <h4>Tehničar Kulinarstva</h4>
+                                <h4>PU "Centar za obrazovanje i obuku odraslih tehničke struke" Živinice</h4>
                             </li>
                         </ul>
                 <ul>
                     <li>
                         <h5>2010 - 2013</h5>
-                        <h4>Cook</h4>
-                        <h4>Tuzla Tourism and Catering High School</h4>
+                        <h4>Kuhar</h4>
+                        <h4>JU Turističko – ugostiteljska škola Tuzla</h4>
                     </li>
                 </ul>
             </div>
+
+            <div class="contactInfo-edu"><!--glavni div za dio stranice gdje se nalaze podaci o edukaciji
+                ovaj div sadrzi naslov, podnaslove, neuredjenu listu stavki..-->
+                    <h3 class="naslov">Certification</h3>
+                    <ul>
+                        <li>
+                            <h5>June 30, 2023 </h5>
+                            <h4>Salesforce for future developers</h4>
+                            <h4>Issued by: Intermino, Novi Sad</h4>
+                            <h4>Certification Link: <a href="https://www.dropbox.com/scl/fi/aoa7gp0u54sgknregc45y/Internship-Certificate.pdf?rlkey=sy6pe9ieigqlp6snv09envn1t&dl=0">View Certificate</a></h4>
+                        </li>
+                        <ul>
+                            <ul>
+                                <li>
+                                    <h5>January 05, 2023 </h5>
+                                    <h4>Cybersecurity Essentials</h4>
+                                    <h4>Issued by: Cisco Networking Academy</h4>
+                                    <h4>Certification Link: <a href="https://www.dropbox.com/scl/fi/jxycpfj1m8rs38d3bmhlu/Cybersecurity_Essentials_Badge20230818-28-xf7qg1.pdf?rlkey=cmc4s14ddo70knd6cz3ssbfsz&dl=0">View Certificate</a></h4>
+                                </li>
+                            </ul>
+                </div>
 
             <div class="contactInfo-lang"><!--Ovo je glavni div koji sadrzi podatke na stranici za Language(jezik)
             kao sto je naslov, neuredjena lista stavki, span elementi, podivovi i slično.
@@ -128,13 +148,7 @@
                     </li>
                     
                 </ul>
-                <!--ovdje sam definisao neovisna dva dugmica i dvije ikonice koje se nalaze na lijevoj strani stranice
-                gdje su osobni podaci, odmah ispod Language imamo Print ikonu i Print dugmic, kao i PDF ikonu, i PDF dugmic-->
-                <i class="fa fa-print" aria-hidden="true" id="printIcon"></i><!--Print Ikona-->
-                <button id="printCV">Print CV</button><!--Print dugmic-->
-                <i class="fa fa-download" aria-hidden="true" id="PDF"></i><!--Download Ikona-->
-                <button id="btnPDF">Download PDF</button><!--Download dugmic-->
-            
+
             </div>
         </div>   
         
@@ -152,14 +166,12 @@
                         Mogu reći da se jako brzo prilagođavam i da problemima pristupam jako ozbiljno te da ih 
                         doživljavam kao izazove. Spreman sam da vrijedno radim, izučavam nove tehnologije i 
                         radim na ličnom usavršavanju.
-
                     </p>
                 </div>
-
+                
                 <div class="about" lang="english"> <!--Ovaj div takodje klase about sadrzi naslov Experience kao i paragraf-->
                     <h2 class="naslov2">Experience</h2>
                     <p id="translate2">
-                        Diplomirao sam na visokoj školi računarstva i informatike "eMPIRICOM" u Tuzli, Bosna i Hercegovina.
                         Posebno bih želio da istaknem svoje iskustvo u vezi sa dvomjesečnom praksom koju sam uspješno završio u kompaniji "Intermino" 
                         koja se nalazi u Novom Sadu, Srbija. 
                         Tokom prakse, bavio sam se administracijom na Salesforce platformi i programiranjem u Apex programskom jeziku. 
@@ -168,8 +180,7 @@
                         tako i u timu, gdje sam stekao znanja iz raznih područja informatike, kao što su web tehnologije, 
                         baze podataka, objektno orijentisano programiranje, proceduralno programiranje i
                         računarske mreže.
-                        <br><br>
-                        
+
                     	</p>
                 </div>
 
@@ -197,6 +208,78 @@
                 </div>
             </div>
             
+            <div class="about">
+                <h2 class="naslov2">Projects</h2>
+
+                <ol>
+                
+                    <li class="tehnologijeIdLi">
+                        Bank Management System
+                        <br><br>
+                        <ul>
+                            <li class="tehnologijeIdLi">
+                                <p><strong>Opis:</strong> Razvio sam Bank Management System, sveobuhvatnu aplikaciju koja omogućava
+                                     korisnicima korištenje bankomata za podizanje i uplatu sredstava, kao i provjeru stanja računa.
+                                      Aplikacija također sadrži administratorski dio s naprednim mogućnostima, 
+                                      uključujući unos i upravljanje korisnicima, aktiviranje i deaktiviranje računa, 
+                                      pretraživanje korisnika i izvještaja te izvoz u PDF formatu.</p>
+                            </li>
+                            <li class="tehnologijeIdLi">
+                                <p><strong>Tehnologije:</strong> Java, MSSQL, Java Swing za korisnički interfejs,
+                                     iText i JDatePicker za dodatne funkcionalnosti.</p>
+                            </li>
+                            <li class="tehnologijeIdLi">
+                                <p><strong>Link:</strong> <a href="https://github.com/SamirK95/BankManagementSystem-sk95.git">GitHub Repo</a></p>
+                            </li>
+                        </ul>
+                    </li>
+
+                
+
+                
+                    <li class="tehnologijeIdLi">
+                        Dental Clinic Website
+                        <br><br>
+                        <ul>
+                            <li class="tehnologijeIdLi">
+                                <p><strong>Opis:</strong> Kreirao sam website za stomatološku ordinaciju, koji je također poslužio kao završni projekat na fakultetu.
+                                     Ovaj website predstavlja stomatološku ordinaciju, nudi informacije o doktorima i njihovim specijalizacijama, 
+                                     uslugama koje ordinacija pruža, cjenovniku usluga, lokaciji ordinacije i omogućava online rezervaciju termina za pacijente.</p>
+                            </li>
+                            <li class="tehnologijeIdLi">
+                                <p><strong>Tehnologije:</strong> Razvio sam ovaj projekat koristeći ASP.NET, C#, CSS i JavaScript za interaktivnost.</p>
+                            </li>
+                            <li class="tehnologijeIdLi">
+                                <p><strong>Link:</strong> <a href="https://github.com/SamirK95/Dental-Clinic-Dentalis.git">GitHub Repo</a></p>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="tehnologijeIdLi">
+                        Microfinance Organization Web Application
+                        <br><br>
+                        <ul>
+                            <li class="tehnologijeIdLi">
+                                <p><strong>Opis:</strong> Web aplikacija za mikrokreditnu organizaciju omogućava upravljanje klijentima, 
+                                    kreditima i izvještajima. Korisnici mogu definirati, ažurirati i brisati klijente, 
+                                    te dodavati detalje o kreditima s rokovima otplate, kamatnim stopama i iznosima. 
+                                    Aplikacija omogućava generiranje izvještaja po regijama, podružnicama i uredima za određeni vremenski period,
+                                    kao i praćenje isplata kredita po kriterijima.</p>
+                            </li>
+                            <li class="tehnologijeIdLi">
+                                <p><strong>Tehnologije:</strong> Korištene tehnologije uključuju ASP.NET, C#, CSS i MSSQL.</p>
+                            </li>
+                            <li class="tehnologijeIdLi">
+                                <p><strong>Link:</strong> <a href="https://github.com/SamirK95/Microfinance-banking.git">GitHub Repo</a></p>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                
+            </ol>
+                
+            </div>
+            
             <div class="about interest"><!--Ovaj div klase interest sadrzava naslov Interest,
                      neuredjenu listu stavki sa ikonicama ilustracije i sadrzajem kao sto je 
                     "Hobi: Kuhanje, Igrice i ostali sadrzaj." -->
@@ -212,60 +295,6 @@
                 </ul>  
             </div>   
         </div>
-        <!--U ovoj skripti sam definisao varijablu btn u kojoj sam napisao komandu
-        gdje pronalazim dugmic to jeste dugmic za printanje dokumenta(CV-a)
-        nakon toga sam naveo tu varijablu i komandu da kada se klikne na dugmic
-        printa dokument pomocu ugradjene js funkcije onclick.-->
-    <script>
-        var btn = document.querySelector('#printCV');
-        btn.onclick= () =>{
-            window.print();
-        }
-     </script>
-
-     <script>
-        const aboutme = document.querySelector('#translate');
-        const experience = document.querySelector('#translate2');
-        const skills = document.querySelector('#translate3');
-        const interest = document.querySelectorAll('[translate]');
-
-        
-
-        var data = {
-            "english": {
-            "translate": "My name is Samir Katanić, I was born on 5 December, 1995 in Tuzla, where I live. I am an enthusiastic, communicative, highly motivated, responsible and reliable person. I am able to work both in a team environment and on my own initiative. I adapt very quickly and I approach problems very seriously and perceive them as challenges. I am ready to work hard, study new technologies and work on personal improvement.",
-            "translate2": "I graduated from the University of Computing and Informatics 'eMPIRICOM' in Tuzla, Bosnia and Herzegovina.I would especially like to highlight my experience in connection with the two-month internship that I successfully completed in the company 'Intermino' located in Novi Sad, Serbia.This experience enriched my skills and enabled me to apply theoretical knowledge in a real business environment.During my studies, I worked on various projects such as solo, as well as in the team, where I gained knowledge in various areas of IT, such as web technologies, databases, object-oriented programming, procedural programming, and computer networks.",
-            "translate3": "The technologies that we used and that I mastered during my studies are the following: \n\n The programming languages I know are: C, C++, C#, Java, I also know the basics of JavaScript and Apex.\n\n ASP.NET web application development platform combined with C# programming language and MSSQL database.\n\n Languages for the structure and styling of websites HTML and CSS.\n Visual Paradigm software design and modeling tool.\n\n A tool for simulating network systems Cisco Packet Tracer.\n Knowledge of the Salesforce platform.\n\n Basic knowledge of Microsoft Office package.\n\n Knowledge and active use of the English language.",
-            "translate4": {
-            "Kuhanje": "Cooking",
-            "Pjevanje": "Singing",
-            "Igrice": "Gaming",
-            "Filmovi": "Movies",
-            "Muzika": "Music",
-            "Putovanje": "Traveling"
-      }
-        }
-};
-
-    function changeLanguage(language) {
-
-        const ulElements = document.querySelector('#TehnologijeUl');
-        ulElements.innerHTML='';
-        
-        aboutme.innerText = data[language]['translate'];
-        experience.innerText = data[language]['translate2'];
-        skills.innerText = data[language]['translate3'];
-
-        Array.from(interest).forEach(function(item) {
-        const interestName = item.textContent.trim();
-        const translatedInterest = data[language]['translate4'][interestName];
-        item.innerHTML = `<i class="${item.firstElementChild.classList.value}"></i>${translatedInterest}`;
-
-
-    });
-  }
-     </script>
-
 
 </body>
 </html>
